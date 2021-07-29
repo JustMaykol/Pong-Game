@@ -2,18 +2,15 @@
 
 PaddleObject::PaddleObject(float _x, float _y) {
     location = new Location(_x, _y);
-
     object = new RectangleShape();
 
     object->setSize({200, 5});
     object->setPosition({location->x, location->y});
-
     object->setOrigin(object->getLocalBounds().width / 2, object->getLocalBounds().height / 2);
 }
 
 void PaddleObject::update() {
     object->setPosition({location->x, location->y});
-
     object->setOrigin(object->getLocalBounds().width / 2, object->getLocalBounds().height / 2);
 }
 

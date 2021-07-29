@@ -26,7 +26,7 @@ SoloGame::SoloGame(Font &_f) {
 }
 
 void SoloGame::draw(RenderWindow &window) {
-    if (counter == 10000) {
+    if (counter >= 10000) {
         counter = 0;
     }
 

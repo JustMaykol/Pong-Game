@@ -16,8 +16,6 @@ void Game::init() {
     if (icon.loadFromFile("../src/resources/icon.png"))
         window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
-    mode = UNKNOWN;
-
     Menu menu(font);
 
     SoloGame soloGame(font);
@@ -120,7 +118,7 @@ void Game::init() {
                                     menu.moveRight();
                                     break;
 
-                                case Keyboard::Return:
+                                case Keyboard::Enter:
                                     switch (menu.itemIndex) {
                                         case 0:
                                             mode = SOLO;
