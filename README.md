@@ -1,28 +1,28 @@
 # Pong Game
 
-El clásico **Pong** escrito en C++14 con [SFML](https://www.sfml-dev.org/), con modo contra la computadora y modo de dos jugadores en el mismo teclado.
+The classic **Pong**, written in C++14 with [SFML](https://www.sfml-dev.org/), with a single-player mode against the computer and a two-player mode on the same keyboard.
 
-## Modos de juego
+## Game modes
 
-| Modo | Descripción |
+| Mode | Description |
 |---|---|
-| **SOLO** | Juegas contra la computadora, que sigue la pelota |
-| **DUO** | Dos jugadores en el mismo teclado |
+| **SOLO** | Play against the computer, which follows the ball |
+| **DUO** | Two players on the same keyboard |
 
-## Controles
+## Controls
 
-| Acción | Teclas |
+| Action | Keys |
 |---|---|
-| Moverse por el menú | `←` `→` o `A` `D` |
-| Elegir opción | `Enter` |
-| Mover la paleta (SOLO) | `←` `→` o `A` `D` |
-| Jugador 1 (DUO) | `←` `→` |
-| Jugador 2 (DUO) | `A` `D` |
-| Volver al menú | `Esc` (el marcador se imprime en consola) |
+| Navigate the menu | `←` `→` or `A` `D` |
+| Select option | `Enter` |
+| Move the paddle (SOLO) | `←` `→` or `A` `D` |
+| Player 1 (DUO) | `←` `→` |
+| Player 2 (DUO) | `A` `D` |
+| Back to menu | `Esc` (the score is printed to the console) |
 
-## Compilar
+## Building
 
-Requiere un compilador con C++14, CMake 3.17+ y **SFML 2.5 o 2.6** (la API que usa no es compatible con SFML 3).
+Requires a C++14 compiler, CMake 3.17+ and **SFML 2.5 or 2.6** (the API it uses is not compatible with SFML 3).
 
 ```bash
 cmake -S . -B build
@@ -30,19 +30,19 @@ cmake --build build
 cd build && ./pong
 ```
 
-Si SFML está instalado en una ruta no estándar, indícala con `-DCMAKE_PREFIX_PATH=/ruta/a/sfml` (o `-DSFML_DIR=.../lib/cmake/SFML`). En Windows se asume `C:/SFML` y las DLL se copian junto al ejecutable.
+If SFML is installed in a non-standard location, point to it with `-DCMAKE_PREFIX_PATH=/path/to/sfml` (or `-DSFML_DIR=.../lib/cmake/SFML`). On Windows, `C:/SFML` is assumed and the DLLs are copied next to the executable.
 
-El juego carga la fuente y el ícono desde `../src/resources/`, así que debe ejecutarse desde una carpeta dentro del repo (por ejemplo `build/`).
+The game loads its font and icon from `../src/resources/`, so it must be run from a folder inside the repo (for example `build/`).
 
-## Estructura
+## Structure
 
 ```
 src/
 ├── main/
-│   ├── main.cpp            # punto de entrada
-│   ├── game/               # bucle principal, modos SOLO y DUO
-│   ├── menu/               # menú principal
-│   ├── object/             # pelota y paletas
+│   ├── main.cpp            # entry point
+│   ├── game/               # main loop, SOLO and DUO modes
+│   ├── menu/               # main menu
+│   ├── object/             # ball and paddles
 │   └── util/               # Location
 └── resources/              # font.ttf, icon.png
 ```
