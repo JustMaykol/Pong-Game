@@ -22,18 +22,17 @@ El clásico **Pong** escrito en C++14 con [SFML](https://www.sfml-dev.org/), con
 
 ## Compilar
 
-Requiere un compilador con C++14, CMake 3.17+ y **SFML 2.5** (la API que usa no es compatible con SFML 3).
+Requiere un compilador con C++14, CMake 3.17+ y **SFML 2.5 o 2.6** (la API que usa no es compatible con SFML 3).
 
 ```bash
-mkdir build && cd build
-cmake ..
-cmake --build .
-./Project
+cmake -S . -B build
+cmake --build build
+cd build && ./pong
 ```
 
-El juego carga la fuente y el ícono desde `../src/resources/`, así que debe ejecutarse desde una carpeta dentro del repo (por ejemplo `build/`).
+Si SFML está instalado en una ruta no estándar, indícala con `-DCMAKE_PREFIX_PATH=/ruta/a/sfml` (o `-DSFML_DIR=.../lib/cmake/SFML`). En Windows se asume `C:/SFML` y las DLL se copian junto al ejecutable.
 
-> El `CMakeLists.txt` se configuró originalmente para Windows (SFML en `C:/SFML` y DLLs de MinGW). En otros sistemas puede requerir ajustar las rutas de SFML.
+El juego carga la fuente y el ícono desde `../src/resources/`, así que debe ejecutarse desde una carpeta dentro del repo (por ejemplo `build/`).
 
 ## Estructura
 
